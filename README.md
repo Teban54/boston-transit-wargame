@@ -5,6 +5,9 @@ bus or rail, observe traveler response, and compare two automatic agency policie
 The default scenario uses Discrete types and cumulative capital B=50. Runs live
 in each browser session; there is no persistence or database.
 
+**Public demo:** https://boston-transit-wargame.streamlit.app/  
+**Repository:** https://github.com/Teban54/boston-transit-wargame
+
 ## Run locally
 
 Use Python 3.12. From this repository root:
@@ -57,7 +60,7 @@ Downtown–Everett/Chelsea rail.
 1. Publish this repository as **Teban54/boston-transit-wargame**, public,
    with branch **master**.
 2. Sign in at https://share.streamlit.io and select the Teban54 workspace.
-3. Choose Create app → Yup, I have an app. Set repository
+3. Choose Create app → Deploy from repo. Set repository
    `Teban54/boston-transit-wargame`, branch `master`, and main file `app.py`.
 4. In Advanced settings explicitly choose **Python 3.12**. No secrets are needed.
 5. Request subdomain `boston-transit-wargame`; accept the assigned URL if unavailable.
@@ -66,6 +69,14 @@ Downtown–Everett/Chelsea rail.
 Cloud runs Linux and starts from the repository root. The data and asset paths
 are portable. Public repositories produce public apps by default; verify the
 actual sharing setting and anonymous access after deployment.
+
+Deployment was verified on October 10, 2026: Python 3.12.15 on Cloud, public
+sharing, two independent anonymous sessions, both traveler models and agency
+policies, manual construction, Step/Play/Pause, and stable map canvas identity.
+The original workspace passed all 130 tests in both the isolated deployment
+environment and the shared environment. The shared environment emitted two
+existing dependency deprecation warnings. Cloud applied its own pyarrow 24
+compatibility replacement while retaining the three pinned direct dependencies.
 
 Community Cloud currently sleeps apps after 12 hours without traffic. Open and
 verify the app before presenting. Repository pushes update the connected app;
